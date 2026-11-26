@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0e18" />
+  <meta name="description" content="FoxBet — sua central de jogos." />
+  <title>FoxBet — Entre no jogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="FoxBet início">
+        <span class="brand-mark">🦊</span>
+        <span>Fox<span class="brand-accent">Bet</span></span>
+      </a>
+      <div class="sidebar-caption">MENU PRINCIPAL</div>
+      <nav class="side-nav" aria-label="Navegação principal">
+        <button class="nav-link active" data-view="home"><span class="nav-icon">⌂</span><span>Início</span></button>
+        <button class="nav-link" data-view="games"><span class="nav-icon">▦</span><span>Jogos</span></button>
+        <button class="nav-link" data-view="wallet"><span class="nav-icon">◈</span><span>Carteira</span></button>
+        <button class="nav-link" data-view="profile"><span class="nav-icon">◉</span><span>Minha conta</span></button>
+        <button class="nav-link hidden" id="admin-nav-link" data-view="admin"><span class="nav-icon">✦</span><span>Central Admin</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span class="note-icon">🦊</span><span>FOXBET · PLAY YOUR GAME</span></div>
+        <button class="nav-link help-link" id="help-btn"><span class="nav-icon">?</span><span>Central de ajuda</span></button>
+      </div>
+    </aside>
+    <button class="sidebar-scrim" id="sidebar-scrim" aria-label="Fechar menu"></button>
+
+    <div class="main-column">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="topbar-spacer"></div>
+        <div class="balance-pill"><span class="coin">◉</span><span id="header-balance">50</span><small>créditos</small></div>
+        <button class="topbar-user" id="account-action"><span class="user-avatar">👤</span><span id="header-username">Visitante</span><span class="chevron">⌄</span></button>
+      </header>
+
+      <main id="main-content" class="main-content">
+        <section class="page active" id="page-home">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow" id="welcome-eyebrow">BEM-VINDO À FOXBET</p>
+              <h1>Olá, <span id="welcome-name">Visitante</span> <span class="wave">✦</span></h1>
+              <p class="muted">Escolha seu próximo jogo.</p>
+            </div>
+            <button class="primary-button compact" id="home-play">Explorar jogos <span>→</span></button>
+          </div>
+
+          <section class="hero-banner">
+            <div class="hero-copy">
+              <span class="hero-kicker"><span class="live-dot"></span> FOXBET • ÁREA DE JOGOS</span>
+              <h2>Uma nova rodada<br /><em>começa aqui.</em></h2>
+              <p>Entre no clima FoxBet e escolha sua próxima rodada. Cada conta começa com <strong>50 créditos</strong>.</p>
+              <button class="hero-button" id="hero-slots">Jogar caça-níquel <span>↗</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+              <div class="hero-glow"></div>
+              <div class="hero-fox">🦊</div>
+              <div class="hero-chip chip-a">50 <small>CR</small></div>
+              <div class="hero-chip chip-b">★</div>
+              <div class="hero-spark spark-a">✦</div><div class="hero-spark spark-b">✧</div>
+            </div>
+          </section>
+
+          <div class="foxbet-ad hidden" id="foxbet-ad-slot" aria-label="Anúncio FoxBet"></div>
+          <div class="section-heading">
+            <div><p class="eyebrow">ESCOLHA SUA EXPERIÊNCIA</p><h2>Jogos em destaque</h2></div>
+            <button class="text-button" data-go="games">Ver todos <span>→</span></button>
+          </div>
+          <div class="game-grid home-games">
+            <button class="game-card slots-card" data-game="slots"><span class="game-tag">CLÁSSICO</span><span class="game-art slot-art">🎰</span><span class="game-card-title">Fox Slots</span><span class="game-card-sub">Gire os rolos e descubra</span><span class="card-arrow">↗</span></button>
+            <button class="game-card crash-card" data-game="crash"><span class="game-tag">ADRENALINA</span><span class="game-art crash-art">🚀</span><span class="game-card-title">Fox Crash</span><span class="game-card-sub">Até onde o foguete vai?</span><span class="card-arrow">↗</span></button>
+            <button class="game-card mines-card" data-game="mines"><span class="game-tag">ESTRATÉGIA</span><span class="game-art mines-art">💎</span><span class="game-card-title">Fox Mines</span><span class="game-card-sub">Encontre gemas, evite minas</span><span class="card-arrow">↗</span></button>
+            <button class="game-card blackjack-card" data-game="blackjack"><span class="game-tag">CARTAS</span><span class="game-art">🃏</span><span class="game-card-title">Fox Blackjack</span><span class="game-card-sub">Chegue perto de 21</span><span class="card-arrow">↗</span></button>
+            <button class="game-card roulette-card" data-game="roulette"><span class="game-tag">MESA CLÁSSICA</span><span class="game-art">🎡</span><span class="game-card-title">Fox Roulette</span><span class="game-card-sub">Escolha sua cor ou número</span><span class="card-arrow">↗</span></button>
+            <button class="game-card plinko-card" data-game="plinko"><span class="game-tag">QUEDAS</span><span class="game-art">🔻</span><span class="game-card-title">Fox Plinko</span><span class="game-card-sub">Solte a bola pelos pinos</span><span class="card-arrow">↗</span></button>
+          </div>
+
+          <div class="lower-grid">
+            <section class="panel welcome-panel">
+              <div class="panel-icon">🎁</div><div><h3>Boas-vindas à FoxBet</h3><p>50 créditos para começar sua jornada.</p></div>
+            </section>
+            <section class="panel history-panel">
+              <div class="panel-heading"><div><p class="eyebrow">ATIVIDADE</p><h3>Rodadas recentes</h3></div><button class="text-button" data-go="wallet">Ver histórico</button></div>
+              <div id="home-history" class="history-list"><div class="empty-state">Suas rodadas aparecerão aqui.</div></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="page-games">
+          <div class="page-heading"><p class="eyebrow">CATÁLOGO FOXBET</p><h1>Todos os jogos</h1><p class="muted">Escolha uma experiência para começar uma rodada.</p></div>
+          <div class="foxbet-ad hidden" id="foxbet-games-ad-slot" aria-label="Anúncio FoxBet"></div>
+          <div class="game-grid catalog-grid">
+            <button class="game-card slots-card" data-game="slots"><span class="game-tag">CLÁSSICO</span><span class="game-art">🎰</span><span class="game-card-title">Fox Slots</span><span class="game-card-sub">Máquina de 3 rolos</span><span class="card-arrow">↗</span></button>
+            <button class="game-card crash-card" data-game="crash"><span class="game-tag">ADRENALINA</span><span class="game-art">🚀</span><span class="game-card-title">Fox Crash</span><span class="game-card-sub">Foguete e retirada manual</span><span class="card-arrow">↗</span></button>
+            <button class="game-card mines-card" data-game="mines"><span class="game-tag">ESTRATÉGIA</span><span class="game-art">💎</span><span class="game-card-title">Fox Mines</span><span class="game-card-sub">Tabuleiro 5 × 5</span><span class="card-arrow">↗</span></button>
+            <button class="game-card blackjack-card" data-game="blackjack"><span class="game-tag">CARTAS</span><span class="game-art">🃏</span><span class="game-card-title">Fox Blackjack</span><span class="game-card-sub">Jogue contra a banca</span><span class="card-arrow">↗</span></button>
+            <button class="game-card roulette-card" data-game="roulette"><span class="game-tag">MESA CLÁSSICA</span><span class="game-art">🎡</span><span class="game-card-title">Fox Roulette</span><span class="game-card-sub">Roleta de 0 a 36</span><span class="card-arrow">↗</span></button>
+            <button class="game-card plinko-card" data-game="plinko"><span class="game-tag">QUEDAS</span><span class="game-art">🔻</span><span class="game-card-title">Fox Plinko</span><span class="game-card-sub">3 níveis de risco</span><span class="card-arrow">↗</span></button>
+          </div>
+        </section>
+
+        <section class="page" id="page-game">
+          <div id="game-screen"></div>
+        </section>
+
+        <section class="page" id="page-wallet">
+          <div class="page-heading"><p class="eyebrow">SEU SALDO</p><h1>Carteira virtual</h1><p class="muted">Acompanhe seus créditos e o histórico de rodadas.</p></div>
+          <div class="wallet-summary panel"><div><span class="muted">SALDO DISPONÍVEL</span><div class="wallet-amount"><span class="coin large">◉</span><strong id="wallet-balance">50</strong><small>créditos</small></div></div><div class="wallet-summary-icon">◈</div></div>
+          <section class="panel transaction-panel"><div class="panel-heading"><div><p class="eyebrow">MOVIMENTAÇÕES</p><h2>Histórico</h2></div><span class="small-muted">Mais recentes primeiro</span></div><div id="wallet-history" class="history-list"><div class="empty-state">Nenhuma movimentação ainda.</div></div></section>
+        </section>
+
+        <section class="page" id="page-profile">
+          <div class="page-heading"><p class="eyebrow">FOXBET ID</p><h1>Minha conta</h1><p class="muted">Informações da sua conta FoxBet.</p></div>
+          <div class="panel profile-panel"><div class="profile-avatar">🦊</div><div class="profile-info"><span class="muted">FOXBET ID</span><h2 id="profile-username">Visitante</h2><span class="small-muted" id="account-mode">Entre para sincronizar sua conta</span></div><button class="secondary-button" id="profile-auth-action">Entrar / cadastrar</button></div>
+          <div class="panel rules-panel"><h3>Perfil FoxBet</h3><p>Gerencie sua conta, acompanhe seus créditos e consulte as regras dos jogos.</p><button class="text-button" id="profile-help">Central de ajuda <span>→</span></button></div>
+          <button class="danger-button hidden" id="signout-btn">Sair da conta</button>
+        </section>
+
+        <section class="page" id="page-admin">
+          <div id="admin-content">
+            <div class="admin-loading"><span class="admin-loading-icon">✦</span><strong>Preparando a Central Admin...</strong><small>Carregando configurações e permissões.</small></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <div class="modal-card auth-card">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-brand">🦊 <strong>Fox<span>Bet</span></strong></div>
+      <p class="eyebrow">SUA CONTA FOXBET</p><h2 id="auth-title">Entre para continuar</h2><p class="muted modal-description">Use apenas um nome de usuário e uma senha.</p>
+      <div class="auth-tabs"><button class="auth-tab active" data-auth-mode="login">Entrar</button><button class="auth-tab" data-auth-mode="signup">Criar conta</button></div>
+      <form id="auth-form">
+        <label for="auth-username">Nome de usuário</label><input id="auth-username" name="username" autocomplete="username" minlength="3" maxlength="20" placeholder="ex.: fox_player" required />
+        <label for="auth-password">Senha</label><input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="Mínimo de 8 caracteres" required />
+        <p class="form-hint">Use de 3 a 20 caracteres: letras minúsculas, números ou _.</p>
+        <div class="form-error" id="auth-error" role="alert"></div>
+        <button class="primary-button full-width" type="submit" id="auth-submit">Entrar <span>→</span></button>
+      </form>
+      <div id="auth-config-note" class="config-note hidden">O Supabase ainda não foi configurado. Preencha a URL e a chave pública em <code>config.js</code> para ativar cadastro e login.</div>
+      <p class="modal-footnote">FoxBet ID · sua conta, seus jogos.</p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="help-modal" role="dialog" aria-modal="true" aria-labelledby="help-title">
+    <div class="modal-card help-card">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <p class="eyebrow">FOXBET SUPPORT</p><h2 id="help-title">Como jogar</h2>
+      <div class="help-item"><span>01</span><div><strong>Entre na sua conta</strong><p>Use seu FoxBet ID para sincronizar seus créditos.</p></div></div>
+      <div class="help-item"><span>02</span><div><strong>Escolha seu jogo</strong><p>Slots, Crash, Mines, Blackjack, Roulette ou Plinko.</p></div></div>
+      <div class="help-item"><span>03</span><div><strong>Configure sua rodada</strong><p>Defina a aposta no modal e acompanhe as regras exibidas na tela do jogo.</p></div></div>
+      <button class="primary-button full-width" data-close-modal>Entendi</button>
+    </div>
+  </div>
+  <div class="modal-backdrop hidden" id="bet-modal" role="dialog" aria-modal="true" aria-labelledby="bet-modal-title">
+    <div class="modal-card bet-modal-card">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div class="bet-modal-emblem">◈</div>
+      <p class="eyebrow">CONFIGURAR RODADA</p>
+      <h2 id="bet-modal-title">Sua aposta</h2>
+      <p class="muted modal-description">Defina o valor da rodada em <strong id="bet-modal-game">FoxBet</strong>.</p>
+      <label class="bet-modal-label" for="bet-modal-input">VALOR DA APOSTA</label>
+      <div class="field-wrap bet-modal-amount"><input id="bet-modal-input" type="number" min="1" max="5000" step="1" value="5" inputmode="numeric"><span>CR</span></div>
+      <div class="bet-modal-shortcuts"><button type="button" data-bet-amount="1">1</button><button type="button" data-bet-amount="5">5</button><button type="button" data-bet-amount="10">10</button><button type="button" data-bet-amount="25">25</button><button type="button" data-bet-amount="50">50</button></div>
+      <div id="bet-modal-options"></div>
+      <div class="form-error" id="bet-modal-error" role="alert"></div>
+      <div class="bet-modal-actions"><button type="button" class="secondary-button" id="bet-modal-cancel">Cancelar</button><button type="button" class="primary-button" id="bet-modal-confirm">Confirmar aposta <span>→</span></button></div>
+      <p class="modal-footnote">A aposta será aplicada após a confirmação.</p>
+    </div>
+  </div>
+  <div class="modal-backdrop hidden" id="admin-credit-modal" role="dialog" aria-modal="true" aria-labelledby="admin-credit-title">
+    <div class="modal-card admin-credit-modal-card">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-brand">🦊 <strong>Fox<span>Bet</span></strong></div>
+      <p class="eyebrow">CENTRAL ADMIN</p>
+      <h2 id="admin-credit-title">Adicionar créditos</h2>
+      <p class="muted modal-description">Selecione a conta e defina a quantidade que será adicionada.</p>
+      <form id="admin-credit-form" class="admin-credit-form">
+        <div class="admin-credit-field"><label for="admin-credit-username">Nome de usuário</label><input id="admin-credit-username" class="admin-text-input" type="text" placeholder="ex.: fox_player" minlength="3" maxlength="20" autocomplete="off" required></div>
+        <div class="admin-credit-field"><label for="admin-credit-amount">Quantidade de créditos</label><input id="admin-credit-amount" class="admin-text-input" type="number" min="1" max="100000" step="1" value="100" inputmode="numeric" required></div>
+        <div class="admin-credit-field admin-credit-reason"><label for="admin-credit-reason">Motivo (opcional)</label><input id="admin-credit-reason" class="admin-text-input" type="text" maxlength="100" placeholder="Bônus, evento, ajuste..."></div>
+        <div class="admin-credit-submit"><button class="admin-save-button" id="admin-credit-submit" type="submit">CONFIRMAR CRÉDITOS ↗</button></div>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
